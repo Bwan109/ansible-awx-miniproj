@@ -1,7 +1,7 @@
 ---
 - name: Basic Ansible Playbook
   hosts: localhost  # Runs on all hosts defined in the inventory file
-  become: true  # Run tasks as sudo
+  become_method: su  # Use 'su' instead of 'sudo'
   gather_facts: true  # Gather information about the hosts
 
   tasks:
