@@ -1,16 +1,14 @@
 ---
 - name: Basic Ansible Playbook
-  hosts: localhost  # Runs on all hosts defined in the inventory file
-  become_method: su  # Use 'su' instead of 'sudo'
+  hosts: machine  # Runs on all hosts defined in the inventory file
   gather_facts: true  # Gather information about the hosts
-
   tasks:
     - name: Create a simple text file
       file:
-        path: /tmp/hello_world.txt
+        path: /home/bwanwork1/hello_world.txt
         state: touch  # Creates an empty file if it doesn't exist
 
     - name: Write content to the text file
       copy:
         content: "Hello, world! This is managed by Ansible."
-        dest: /tmp/hello_world.txt
+        dest: /home/bwanwork1/hello_world.txt
